@@ -1,0 +1,6 @@
+# Ignore artifacts:
+node_modules
+.gitignore
+.eslintrc.json
+README.md 
+webpack.config.js
