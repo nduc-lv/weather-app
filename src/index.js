@@ -1,11 +1,11 @@
 import getWeatherInfo from "./core/weather-api";
-async function displayInfo(){
-    const info = await getWeatherInfo("Ha noi");
+import {displayData, displayError} from "./front/render-html";
+async function display(location){
+    const info = await getWeatherInfo(location);
     if (info.hasOwnProperty("error")){
-        console.log(info.error.message);
+        displayError(info.error.message);
     }
     else{
-        console.log(info);
+        displayData(info);
     }
 }
-displayInfo();
