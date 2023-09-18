@@ -7,14 +7,17 @@ function displayData(weatherData){
     const wind = document.querySelector("#wind");
     const condition = document.querySelector("#condition");
     const location = document.querySelector("#location");
+    const icon = document.querySelector(".condition-icon");
 
     error.textContent = '';
     display.style.display = "block";
     temp.textContent = weatherData.temp;
-    humidity.textContent = weatherData.humidity;
-    wind.textContent = weatherData.wind;
+    temp.innerHTML += '&#8451;';
+    humidity.textContent = weatherData.humidity + '%';
+    wind.textContent = '' + weatherData.wind + ' km/h';
     condition.textContent = weatherData.condition;
-    location.textContent = weatherData.location;
+    location.textContent = 'Weather in ' + weatherData.location;
+    icon.src = "https:" + weatherData.icon;
 }
 function displayError(errorMessage){
     const display = document.querySelector('.display-weather');

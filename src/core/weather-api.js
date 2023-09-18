@@ -15,6 +15,7 @@ async function getWeatherInfo(location){
             "wind": info.current.wind_kph,
             "condition": info.current.condition.text,
             "location": info.location.name,
+            "icon": info.current.condition.icon,
         }
         return usefulInfo;
     }
